@@ -13,7 +13,7 @@ function submitForm(e) {
 
   formData.append("image", file.files[0]);
 
-  fetch("http://localhost:5000/upload_files", {
+  fetch("https://4yf87n-5000.csb.app/upload_files", {
     method: "POST",
     body: formData,
   })
@@ -21,7 +21,7 @@ function submitForm(e) {
       console.log(
         Promise.resolve(response.json()).then((data) => {
           document.getElementById("image").src =
-            "http://localhost:5000/" + data.imageUrl;
+            "https://4yf87n-5000.csb.app/" + data.imageUrl;
         })
       );
     })
